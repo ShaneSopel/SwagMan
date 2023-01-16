@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 2.8)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+project(SwagRacing)
+set(CMAKE_BUILD_TYPE Debug)
+find_package(SFML 2.5 
+  COMPONENTS system window graphics audio REQUIRED)
+set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Include/)
+set(HEADERS  ${INCLUDE_DIR}/AssetMan.h ${INCLUDE_DIR}/DrawMap.h ${INCLUDE_DIR}/Game.h ${INCLUDE_DIR}/LevelManager.h ${INCLUDE_DIR}/Menu.h ${INCLUDE_DIR}/PauseGame.h ${INCLUDE_DIR}/RaceCar.h ${INCLUDE_DIR}/SoundManager.h ${INCLUDE_DIR}/State.h ${INCLUDE_DIR}/StateMan.h ${INCLUDE_DIR}/TextManager.h)
+set(SOURCES  AssetMan.cpp DrawMap.cpp Game.cpp LevelManager.cpp Main.cpp Menu.cpp PauseGame.cpp RaceCar.cpp SoundManager.cpp  StateMan.cpp TextManager.cpp)
+include_directories(${INCLUDE_DIR})
+add_executable(SwagRacing ${SOURCES} ${HEADERS})
+target_include_directories(SwagRacing PRIVATE ${PROJECT_BINARY_DIR} ${INCLUDE_DIR})
+target_link_libraries(SwagRacing sfml-system sfml-graphics sfml-audio sfml-window) 
