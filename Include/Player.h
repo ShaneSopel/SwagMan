@@ -5,16 +5,16 @@
 #include <list>
 #include <SFML/Graphics.hpp>
 
-class RaceCar : public sf::Drawable
+class Player : public sf::Drawable
 {
     private:
 
-    sf::Sprite car;
+    sf::Sprite player;
 
     public:
 
-    RaceCar();
-    ~RaceCar();
+    Player();
+    ~Player();
 
     void Init(const sf::Texture &texture);
     void Move(const sf::Vector2f &direction);

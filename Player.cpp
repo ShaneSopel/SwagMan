@@ -1,28 +1,28 @@
-#include "Include/RaceCar.h"
+#include "Include/Player.h"
 
-RaceCar::RaceCar() 
+Player::Player() 
 {
 
 }
 
-RaceCar::~RaceCar()
+Player::~Player()
 {   
 }
 
-void RaceCar::Init(const sf::Texture &texture)
+void Player::Init(const sf::Texture &texture)
 {
     float x = 16.f;
-    car.setTexture(texture);
-    car.setPosition(375,400);
+    player.setTexture(texture);
+    player.setPosition(375,400);
     //x+= 16.f;
 }
 
-void RaceCar::draw(sf::RenderTarget &target, sf::RenderStates states) const
+void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
-    target.draw(car);
+    target.draw(player);
 }
 
-void RaceCar::Move(const sf::Vector2f &direction)
+void Player::Move(const sf::Vector2f &direction)
 {
-    car.setPosition(direction);
+    player.setPosition(direction);
 }
